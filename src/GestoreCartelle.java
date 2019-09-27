@@ -6,6 +6,7 @@ import java.util.StringTokenizer;
 public class GestoreCartelle {
 	private LinkedList<Cartella> cartelle = new LinkedList<>(); //cartelle in memoria
 
+	// TODO: 28/09/2019 devo cambiarlo per fare in modo che le cartelle siano salvate su una matrice 
 	//carico in memoria le cartelle salvate sul file
 	public GestoreCartelle(){
 		try {

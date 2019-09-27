@@ -8,6 +8,7 @@ public class Main {
 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Inserisci il numero di partecipanti");
+
 		LinkedList<Cartella> cartelle = gestoreCartelle.caricaCartelle(sc.nextInt());
 
 		Gestore gestore = new Gestore(cartelle);

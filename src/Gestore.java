@@ -7,20 +7,22 @@ public class Gestore {
 
 	private LinkedList<Cartella> cartelle;
 	private boolean tombola;
+	final private Partita p;
 	
 	public Gestore(LinkedList<Cartella> cartelle) {
 		this.cartelle = cartelle;
+		p = new Partita(cartelle);
 	}
-	
-	private void iniziaPartita() {
-		// crea e avvia la partita
-		final Partita p = new Partita(cartelle);
-		p.avviaCiclo();
-		
-		// partita finita, riepilogo
-		Utility.info("RIEPILOGO");
-		for (Cartella c: cartelle) {
-			c.stampa();
+
+	public void estraiNumero(){
+		if (p.estraiNumero()){
+			tombola = true;
+
+			// partita finita, riepilogo
+			Utility.info("RIEPILOGO");
+			for (Cartella c: cartelle) {
+				c.stampa();
+			}
 		}
 	}
 
