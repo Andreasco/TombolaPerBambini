@@ -36,6 +36,7 @@ public class Cartella {
 	}
 
 	public boolean controllaVincita(Vincita vincitaCorrente){
+		//cancella
 		int countTombola = 0;
 		int max = -1;
 		int riga = -1;
