@@ -1,3 +1,5 @@
+package backend;
+
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -9,7 +11,8 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Inserisci il numero di partecipanti");
 
-		LinkedList<Cartella> cartelle = gestoreCartelle.caricaCartelle(sc.nextInt());
+		int n = Integer.parseInt(sc.nextLine());
+		LinkedList<Cartella> cartelle = gestoreCartelle.caricaCartelle(n);
 
 		Gestore gestore = new Gestore(cartelle);
 

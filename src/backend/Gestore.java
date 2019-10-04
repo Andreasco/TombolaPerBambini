@@ -1,3 +1,5 @@
+package backend;
+
 import java.util.LinkedList;
 
 public class Gestore {
@@ -6,7 +8,7 @@ public class Gestore {
 	public final static int    RIGHE_IN_UNA_CARTELLA  = 3;
 
 	private LinkedList<Cartella> cartelle;
-	private boolean tombola;
+	private boolean tombola = false;
 	final private Partita p;
 	
 	public Gestore(LinkedList<Cartella> cartelle) {
@@ -21,7 +23,7 @@ public class Gestore {
 			// partita finita, riepilogo
 			Utility.info("RIEPILOGO");
 			for (Cartella c: cartelle) {
-				c.stampa();
+				c.stampaVincite();
 			}
 		}
 	}
