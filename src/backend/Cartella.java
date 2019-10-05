@@ -15,64 +15,52 @@ public class Cartella {
 		segnati = new boolean[3][5]; //default tutti false
 		numeri = num;
 		this.id = id;
+		rigaUltimaVincita = -1;
 	}
 
 	// Chiamata ogni volta che viene estratto un numero
-	public boolean numeroEstratto(final int numero) {
+	public int numeroEstratto(final int numero) {
 		// cerca il numero tra quelli presenti nella cartella, e se presente lo segna estratto
 		for (int i = 0; i < 3; i++)
 			for (int j = 0; j < 5; j++)
 				if (numeri[i][j] == numero) {
 					segnati[i][j] = true;
-					return true;
+					return i;
 				}
-		return false;
+		return -1;
 	}
 
-	private boolean controllaUltimaVincita(int riga, Vincita vincitaCorrente){
-		if (ultimaVincita == null)
-			return false;
-		return riga == rigaUltimaVincita && vincitaCorrente.ordinal() - ultimaVincita.ordinal() == 1;
+	public boolean controllaVincita(Vincita vincitaCorrente, int riga){
+		if (vincitaCorrente == Vincita.Tombola)
+			return controllaTombola();
+		else
+			return controllaRiga(vincitaCorrente, riga);
 	}
 
-	public boolean controllaVincita(Vincita vincitaCorrente){
-		int countTombola = 0;
-		int max = -1;
-		int riga = -1;
-		for (int i = 0; i < 3; i++) {
-			int count = 0;
-			for (Boolean e : segnati[i]) {
-				if (e)
-					count++;
-			}
-			if (count == 5) //riga tutta segnata
-				countTombola++;
+	private boolean controllaTombola(){
+		for (boolean[] riga : segnati)
+			for (boolean elemento : riga)
+				if (!elemento)
+					return false;
+		return true;
+	}
 
-			if (count > max){
-				max = count;
-				riga = i;
-			}
-		}
-
-		//vincitaCorrente.ordinal() - ultimaVincita.ordinal() == 1 vuol dire che la vincita corrente è successiva
-		//all'ultima vincita di questa cartella quindi questa cartella non può vincere se il massimo(potenziale vincita)
-		//si trova sulla stessa riga dell'ultima vincita
-		if (max < 2 || controllaUltimaVincita(riga, vincitaCorrente) )
+	private boolean controllaRiga(Vincita vincitaCorrente, int riga){
+		if (riga == rigaUltimaVincita && vincitaCorrente.ordinal() - ultimaVincita.ordinal() == 1)
 			return false;
-
+		int count = 0;
+		for (boolean elemento : segnati[riga])
+			if (elemento)
+				count++;
 		Vincita v;
-		if (countTombola == 3) //tutte le righe segnate
-			v = Vincita.Tombola;
-		else {
-			if (max == 2)
-				v = Vincita.Ambo;
-			else if (max == 3)
-				v = Vincita.Terna;
-			else if (max == 4)
-				v = Vincita.Quaterna;
-			else
-				v = Vincita.Cinquina;
-		}
+		if (count == 2)
+			v = Vincita.Ambo;
+		else if (count == 3)
+			v = Vincita.Terna;
+		else if (count == 4)
+			v = Vincita.Quaterna;
+		else
+			v = Vincita.Cinquina;
 
 		if (v == vincitaCorrente) {
 			vincite.add(v);
