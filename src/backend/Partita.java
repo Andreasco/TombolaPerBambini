@@ -21,9 +21,10 @@ public class Partita {
 		// controllo se il numero è presente in qualche cartella
 		boolean vincita = false;
 		for (Cartella c : cartelle) {
-			if (c.numeroEstratto(n)) {
+			int riga = c.numeroEstratto(n);
+			if (riga != -1) {
 				Utility.info("La cartella numero "+c.getId()+" contiene il numero!");
-				if (c.controllaVincita(vincitaCorrente)) {
+				if (c.controllaVincita(vincitaCorrente, riga)) {
 					// il giocatore ha vinto
 					vincita = true; //c'è stata una vincita quindi la vincita corrente deve cambiare
 					Utility.info("La cartella numero " + c.getId() + " vince: " + vincitaCorrente.name());
