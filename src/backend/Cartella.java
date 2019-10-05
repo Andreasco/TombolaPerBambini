@@ -72,12 +72,6 @@ public class Cartella {
 			return false;
 	}
 
-	private boolean controllaUltimaVincita(int riga, Vincita vincitaCorrente){
-		if (ultimaVincita == null)
-			return false;
-		return riga == rigaUltimaVincita && vincitaCorrente.ordinal() - ultimaVincita.ordinal() == 1;
-	}
-
 	public void stampaVincite(){
 		String risposta;
 		if (vincite.size() != 0) {
