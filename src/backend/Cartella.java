@@ -46,7 +46,7 @@ public class Cartella {
 	}
 
 	private boolean controllaRiga(Vincita vincitaCorrente, int riga){
-		if (riga == rigaUltimaVincita)
+		if (riga == rigaUltimaVincita && vincitaCorrente.ordinal() - ultimaVincita.ordinal() == 1)
 			return false;
 		int count = 0;
 		for (boolean elemento : segnati[riga])
