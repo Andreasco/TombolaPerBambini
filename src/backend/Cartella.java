@@ -95,12 +95,4 @@ public class Cartella {
 		return id;
 	}
 
-	public int[][] getNumeri() {
-		return numeri;
-	}
-
-	public boolean[][] getSegnati() {
-		return segnati;
-	}
-
 }
