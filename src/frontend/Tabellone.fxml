@@ -1,0 +1,1122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Scene xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontend.TabelloneController">
+    <AnchorPane prefHeight="700.0" prefWidth="700.0">
+      <children>
+         <SplitPane dividerPositions="0.6762177650429799" prefHeight="672.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0">
+           <items>
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                  <children>
+                     <GridPane fx:id="tabellone" gridLinesVisible="true" prefHeight="698.0" prefWidth="204.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                       <columnConstraints>
+                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                       </columnConstraints>
+                       <rowConstraints>
+                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                       </rowConstraints>
+                        <children>
+                           <GridPane fx:id="gridPane" gridLinesVisible="true" layoutX="10.0" layoutY="10.0">
+                              <columnConstraints>
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              </columnConstraints>
+                              <rowConstraints>
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              </rowConstraints>
+                              <children>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="1.0" prefHeight="75.0" prefWidth="46.0" text="1" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="-3.0" layoutY="21.0" prefHeight="75.0" prefWidth="47.0" text="2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="29.0" prefHeight="75.0" prefWidth="47.0" text="3" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="29.0" prefHeight="75.0" prefWidth="47.0" text="4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="29.0" prefHeight="75.0" prefWidth="47.0" text="5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="6.0" layoutY="21.0" prefHeight="75.0" prefWidth="46.0" text="11" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="14.0" prefHeight="75.0" prefWidth="47.0" text="12" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="21.0" prefHeight="75.0" prefWidth="47.0" text="13" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="16.0" layoutY="21.0" prefHeight="75.0" prefWidth="49.5" text="14" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="29.0" prefHeight="75.0" prefWidth="47.0" text="15" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="6.0" layoutY="29.0" prefHeight="74.0" prefWidth="46.0" text="21" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="14.0" prefHeight="74.0" prefWidth="47.0" text="22" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="20.0" prefHeight="74.0" prefWidth="47.0" text="24" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="20.0" prefHeight="74.0" prefWidth="47.0" text="23" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="20.0" prefHeight="74.0" prefWidth="47.0" text="25" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                              </children>
+                           </GridPane>
+                           <GridPane gridLinesVisible="true" layoutX="10.0" layoutY="10.0" GridPane.columnIndex="1">
+                              <columnConstraints>
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              </columnConstraints>
+                              <rowConstraints>
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              </rowConstraints>
+                              <children>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="6.0" layoutY="14.0" prefHeight="75.0" prefWidth="46.0" text="6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="-3.0" layoutY="21.0" prefHeight="75.0" prefWidth="47.0" text="7" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="29.0" prefHeight="75.0" prefWidth="47.0" text="8" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="29.0" prefHeight="75.0" prefWidth="47.0" text="9" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="29.0" prefHeight="75.0" prefWidth="47.0" text="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="6.0" layoutY="21.0" prefHeight="75.0" prefWidth="46.0" text="16" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="14.0" prefHeight="75.0" prefWidth="47.0" text="17" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="21.0" prefHeight="75.0" prefWidth="47.0" text="18" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="16.0" layoutY="21.0" prefHeight="75.0" prefWidth="49.5" text="19" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="29.0" prefHeight="75.0" prefWidth="47.0" text="20" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="6.0" layoutY="29.0" prefHeight="74.0" prefWidth="46.0" text="26" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="14.0" prefHeight="74.0" prefWidth="47.0" text="27" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="20.0" prefHeight="74.0" prefWidth="47.0" text="29" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="20.0" prefHeight="74.0" prefWidth="47.0" text="28" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="20.0" prefHeight="74.0" prefWidth="47.0" text="30" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                              </children>
+                           </GridPane>
+                           <GridPane gridLinesVisible="true" layoutX="10.0" layoutY="10.0" GridPane.rowIndex="1">
+                              <columnConstraints>
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              </columnConstraints>
+                              <rowConstraints>
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              </rowConstraints>
+                              <children>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="6.0" layoutY="14.0" prefHeight="75.0" prefWidth="46.0" text="31" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="-3.0" layoutY="21.0" prefHeight="75.0" prefWidth="47.0" text="32" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="29.0" prefHeight="75.0" prefWidth="47.0" text="33" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="29.0" prefHeight="75.0" prefWidth="47.0" text="34" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="29.0" prefHeight="75.0" prefWidth="47.0" text="35" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="6.0" layoutY="21.0" prefHeight="75.0" prefWidth="46.0" text="41" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="14.0" prefHeight="75.0" prefWidth="47.0" text="42" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="21.0" prefHeight="75.0" prefWidth="47.0" text="43" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="16.0" layoutY="21.0" prefHeight="75.0" prefWidth="49.5" text="44" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="29.0" prefHeight="75.0" prefWidth="47.0" text="45" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="6.0" layoutY="29.0" prefHeight="74.0" prefWidth="46.0" text="51" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="14.0" prefHeight="74.0" prefWidth="47.0" text="52" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="20.0" prefHeight="74.0" prefWidth="47.0" text="54" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="20.0" prefHeight="74.0" prefWidth="47.0" text="53" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="20.0" prefHeight="74.0" prefWidth="47.0" text="55" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                              </children>
+                           </GridPane>
+                           <GridPane gridLinesVisible="true" layoutX="10.0" layoutY="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <columnConstraints>
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              </columnConstraints>
+                              <rowConstraints>
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              </rowConstraints>
+                              <children>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="6.0" layoutY="14.0" prefHeight="75.0" prefWidth="46.0" text="36" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="-3.0" layoutY="21.0" prefHeight="75.0" prefWidth="47.0" text="37" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="29.0" prefHeight="75.0" prefWidth="47.0" text="38" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="29.0" prefHeight="75.0" prefWidth="47.0" text="39" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="29.0" prefHeight="75.0" prefWidth="47.0" text="40" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="6.0" layoutY="21.0" prefHeight="75.0" prefWidth="46.0" text="46" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="14.0" prefHeight="75.0" prefWidth="47.0" text="47" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="21.0" prefHeight="75.0" prefWidth="47.0" text="48" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="16.0" layoutY="21.0" prefHeight="75.0" prefWidth="49.5" text="49" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="29.0" prefHeight="75.0" prefWidth="47.0" text="50" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="6.0" layoutY="29.0" prefHeight="74.0" prefWidth="46.0" text="56" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="14.0" prefHeight="74.0" prefWidth="47.0" text="57" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="20.0" prefHeight="74.0" prefWidth="47.0" text="59" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="20.0" prefHeight="74.0" prefWidth="47.0" text="58" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="20.0" prefHeight="74.0" prefWidth="47.0" text="60" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                              </children>
+                           </GridPane>
+                           <GridPane gridLinesVisible="true" layoutX="10.0" layoutY="10.0" GridPane.rowIndex="2">
+                              <columnConstraints>
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              </columnConstraints>
+                              <rowConstraints>
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              </rowConstraints>
+                              <children>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="6.0" layoutY="14.0" prefHeight="75.0" prefWidth="46.0" text="61" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="-3.0" layoutY="21.0" prefHeight="75.0" prefWidth="47.0" text="62" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="29.0" prefHeight="75.0" prefWidth="47.0" text="63" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="29.0" prefHeight="75.0" prefWidth="47.0" text="64" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="29.0" prefHeight="75.0" prefWidth="47.0" text="65" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="6.0" layoutY="21.0" prefHeight="75.0" prefWidth="46.0" text="71" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="14.0" prefHeight="75.0" prefWidth="47.0" text="72" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="21.0" prefHeight="75.0" prefWidth="47.0" text="73" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="16.0" layoutY="21.0" prefHeight="75.0" prefWidth="49.5" text="74" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="29.0" prefHeight="75.0" prefWidth="47.0" text="75" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="6.0" layoutY="29.0" prefHeight="74.0" prefWidth="46.0" text="81" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="14.0" prefHeight="74.0" prefWidth="47.0" text="82" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="20.0" prefHeight="74.0" prefWidth="47.0" text="84" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="20.0" prefHeight="74.0" prefWidth="47.0" text="83" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="20.0" prefHeight="74.0" prefWidth="47.0" text="85" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                              </children>
+                           </GridPane>
+                           <GridPane gridLinesVisible="true" layoutX="10.0" layoutY="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <columnConstraints>
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              </columnConstraints>
+                              <rowConstraints>
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              </rowConstraints>
+                              <children>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="6.0" layoutY="14.0" prefHeight="75.0" prefWidth="46.0" text="66" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="-3.0" layoutY="21.0" prefHeight="75.0" prefWidth="47.0" text="67" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="29.0" prefHeight="75.0" prefWidth="47.0" text="68" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="29.0" prefHeight="75.0" prefWidth="47.0" text="69" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="29.0" prefHeight="75.0" prefWidth="47.0" text="70" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="6.0" layoutY="21.0" prefHeight="75.0" prefWidth="46.0" text="76" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="14.0" prefHeight="75.0" prefWidth="47.0" text="77" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="21.0" prefHeight="75.0" prefWidth="47.0" text="78" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="16.0" layoutY="21.0" prefHeight="75.0" prefWidth="49.5" text="79" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="29.0" prefHeight="75.0" prefWidth="47.0" text="80" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="6.0" layoutY="29.0" prefHeight="74.0" prefWidth="46.0" text="86" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="14.0" prefHeight="74.0" prefWidth="47.0" text="87" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="20.0" prefHeight="74.0" prefWidth="47.0" text="89" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="20.0" prefHeight="74.0" prefWidth="47.0" text="88" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                    <children>
+                                       <Label alignment="CENTER" layoutX="7.0" layoutY="20.0" prefHeight="74.0" prefWidth="47.0" text="90" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="20.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                              </children>
+                           </GridPane>
+                        </children>
+                     </GridPane>
+                  </children>
+               </AnchorPane>
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                  <children>
+                     <VBox prefHeight="698.0" prefWidth="222.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <children>
+                           <TitledPane animated="false" collapsible="false" text="Vincite">
+                             <content>
+                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="120.0" prefWidth="200.0">
+                                    <children>
+                                       <GridPane fx:id="grigliaVincite" prefHeight="120.0" prefWidth="220.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                         <columnConstraints>
+                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                         </columnConstraints>
+                                         <rowConstraints>
+                                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                         </rowConstraints>
+                                          <children>
+                                             <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                                <children>
+                                                   <Label prefHeight="30.0" prefWidth="99.0" text="Ambo" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                      <font>
+                                                         <Font name="Arial" size="18.0" />
+                                                      </font>
+                                                   </Label>
+                                                </children>
+                                             </AnchorPane>
+                                             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                                <children>
+                                                   <Label prefHeight="30.0" prefWidth="99.0" text="Cinquina" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                      <font>
+                                                         <Font name="Arial" size="18.0" />
+                                                      </font>
+                                                   </Label>
+                                                </children>
+                                             </AnchorPane>
+                                             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                                <children>
+                                                   <Label prefHeight="30.0" prefWidth="99.0" text="Terna" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                      <font>
+                                                         <Font name="Arial" size="18.0" />
+                                                      </font>
+                                                   </Label>
+                                                </children>
+                                             </AnchorPane>
+                                             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                <children>
+                                                   <Label prefHeight="30.0" prefWidth="99.0" text="Tombola" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                      <font>
+                                                         <Font name="Arial" size="18.0" />
+                                                      </font>
+                                                   </Label>
+                                                </children>
+                                             </AnchorPane>
+                                             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                                <children>
+                                                   <Label prefHeight="30.0" prefWidth="99.0" text="Quaterna" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                      <font>
+                                                         <Font name="Arial" size="18.0" />
+                                                      </font>
+                                                   </Label>
+                                                </children>
+                                             </AnchorPane>
+                                          </children>
+                                       </GridPane>
+                                    </children>
+                                 </AnchorPane>
+                             </content>
+                              <font>
+                                 <Font name="Arial" size="14.0" />
+                              </font>
+                           </TitledPane>
+                           <TitledPane animated="false" collapsible="false" text="Vincite cartelle">
+                             <content>
+                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="120.0" prefWidth="200.0">
+                                    <children>
+                                       <Label fx:id="labelVinciteCartelle" layoutX="82.0" layoutY="56.0" prefHeight="111.0" prefWidth="220.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial" size="16.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                             </content>
+                              <font>
+                                 <Font name="Arial" size="14.0" />
+                              </font>
+                           </TitledPane>
+                           <TitledPane animated="false" collapsible="false" text="Notifiche">
+                             <content>
+                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="120.0" prefWidth="200.0">
+                                    <children>
+                                       <Label fx:id="labelNotifiche" layoutX="35.0" layoutY="39.0" prefHeight="111.0" prefWidth="220.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial" size="13.0" />
+                                          </font></Label>
+                                    </children>
+                                 </AnchorPane>
+                             </content>
+                           </TitledPane>
+                           <TitledPane animated="false" collapsible="false" text="Numero estratto">
+                             <content>
+                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="70.0" prefWidth="200.0">
+                                    <children>
+                                       <Label fx:id="labelNumeroEstratto" alignment="CENTER" layoutX="93.0" layoutY="22.0" prefHeight="61.5" prefWidth="220.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial Bold" size="40.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </AnchorPane>
+                             </content>
+                           </TitledPane>
+                           <GridPane prefHeight="45.0">
+                             <columnConstraints>
+                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                             </columnConstraints>
+                             <rowConstraints>
+                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                             </rowConstraints>
+                              <children>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                    <children>
+                                       <Button fx:id="bottoneMostraImmagine" mnemonicParsing="false" prefHeight="30.0" prefWidth="111.0" text="Mostra immagine" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0" />
+                                    </children>
+                                 </AnchorPane>
+                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                    <children>
+                                       <Button fx:id="bottoneEstraiNumero" mnemonicParsing="false" prefHeight="30.0" prefWidth="111.0" text="Estrai numero" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0" />
+                                    </children>
+                                 </AnchorPane>
+                              </children>
+                           </GridPane>
+                           <TitledPane animated="false" collapsible="false" prefWidth="222.0" text="Numeri usciti" wrapText="true">
+                             <content>
+                               <AnchorPane prefHeight="110.0">
+                                    <children>
+                                       <Label fx:id="labelNumeriUsciti" layoutX="76.0" layoutY="34.0" prefHeight="101.5" prefWidth="220.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <font>
+                                             <Font name="Arial" size="13.0" />
+                                          </font></Label>
+                                    </children>
+                                 </AnchorPane>
+                             </content>
+                           </TitledPane>
+                        </children></VBox>
+                  </children>
+               </AnchorPane>
+           </items>
+         </SplitPane>
+         <AnchorPane prefHeight="4.0" prefWidth="700.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+               <MenuBar prefHeight="28.5" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                 <menus>
+                   <Menu mnemonicParsing="false" text="File">
+                     <items>
+                       <MenuItem mnemonicParsing="false" text="Close" />
+                     </items>
+                   </Menu>
+                   <Menu mnemonicParsing="false" text="Edit">
+                     <items>
+                       <MenuItem mnemonicParsing="false" text="Delete" />
+                     </items>
+                   </Menu>
+                   <Menu mnemonicParsing="false" text="Help">
+                     <items>
+                       <MenuItem mnemonicParsing="false" text="About" />
+                     </items>
+                   </Menu>
+                 </menus>
+               </MenuBar>
+            </children>
+         </AnchorPane>
+      </children></AnchorPane>
+</Scene>

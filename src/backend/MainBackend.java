@@ -3,7 +3,7 @@ package backend;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class Main {
+public class MainBackend {
 
 	public static void main(String[] args) {
 		GestoreCartelle gestoreCartelle = new GestoreCartelle();
