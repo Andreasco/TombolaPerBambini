@@ -20,6 +20,7 @@ public class Gestore {
 		if (p.estraiNumero()){
 			tombola = true;
 
+			//fanello
 			// partita finita, riepilogo
 			Utility.info("RIEPILOGO");
 			for (Cartella c: cartelle) {
