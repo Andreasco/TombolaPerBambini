@@ -1,5 +1,9 @@
 package frontend;
 
+import backend.Gestore;
+import backend.Tabellone;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -8,6 +12,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 
 public class TabelloneController {
+	private Gestore gestore;
+
 	@FXML
 	private GridPane tabellone;
 
@@ -41,6 +47,7 @@ public class TabelloneController {
 	public TabelloneController() {
 	}
 
+	//funziona
 	@FXML
 	private void initialize(){
 		//creo la lista delle label con i numeri
@@ -59,6 +66,21 @@ public class TabelloneController {
 					}
 				}
 			}
+
+			bottoneMostraImmagine.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent actionEvent) {
+					//funziona mostra immagine backend
+				}
+			});
+
+			bottoneEstraiNumero.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent actionEvent) {
+					//funziona estrai numero backend con conseguente cambio del colore della label
+					//corrispondente al numero uscito
+				}
+			});
 		}
 
 		//creo la lista delle label con le vincite secondo i seguenti indici
@@ -97,6 +119,7 @@ public class TabelloneController {
 			}
 		}
 	}
+
 
 
 }
