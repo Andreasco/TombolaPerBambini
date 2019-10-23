@@ -6,12 +6,20 @@ import java.util.LinkedList;
 import java.util.StringTokenizer;
 
 public class GestoreCartelle {
+
+	/**
+	 * Questa classe serve per caricare in memoria le cartelle salvate sul file di testo.
+	 * Per ogni riga del file di testo crea una matrice 3x5 che rappresenta i numeri della cartella,
+	 * crea la cartella passandogli la matrice e salva la cartella in una Linked List che verrà poi scorsa
+	 * per ricavare le N cartelle necessarie.
+	 */
+
 	private LinkedList<Cartella> cartelle = new LinkedList<>(); //cartelle in memoria
 
 	//carico in memoria le cartelle salvate sul file
 	public GestoreCartelle(){
 		try {
-			BufferedReader br = new BufferedReader(new FileReader("Cartelle"));
+			BufferedReader br = new BufferedReader(new FileReader("src/persistenza/Cartelle"));
 			for (int i = 0; i < 60; i++){
 				String linea = br.readLine();
 				StringTokenizer st = new StringTokenizer(linea, " ");

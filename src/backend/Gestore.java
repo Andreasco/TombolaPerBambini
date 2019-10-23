@@ -1,36 +1,30 @@
 package backend;
 
+import frontend.TabelloneController;
+
 import java.util.LinkedList;
 
 public class Gestore {
-	// Costanti intrinseche della tombola, NON modificabili
-	public final static int    NUM_IN_UNA_CARTELLA    = 15;
-	public final static int    RIGHE_IN_UNA_CARTELLA  = 3;
+	/**
+	 * Questa classe serve per gestire la partita dal frontend, banalmente serve per estrarre il numero e
+	 * dire alla partita di controllare se ci sono state vincite.
+	 */
 
-	private LinkedList<Cartella> cartelle;
-	private boolean tombola = false;
 	final private Partita p;
+	private int numeroEstratto;
 	
-	public Gestore(LinkedList<Cartella> cartelle) {
-		this.cartelle = cartelle;
-		p = new Partita(cartelle);
+	public Gestore(LinkedList<Cartella> cartelle, TabelloneController tabelloneController) {
+		p = new Partita(cartelle, tabelloneController);
 	}
 
-	public void estraiNumero(){
-		if (p.estraiNumero()){
-			tombola = true;
-
-			//fanello
-			// partita finita, riepilogo
-			Utility.info("RIEPILOGO");
-			for (Cartella c: cartelle) {
-				c.stampaVincite();
-			}
-		}
+	public int estraiNumero(){
+		numeroEstratto = p.estraiNumero();
+		return numeroEstratto;
 	}
 
-	public boolean tombola(){
-		return tombola;
+	//ritorna true se è uscita la tombola
+	public boolean controllaVincite(){
+		return p.controllaVincite(numeroEstratto);
 	}
 }
 

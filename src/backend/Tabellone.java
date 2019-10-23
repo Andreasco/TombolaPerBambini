@@ -2,6 +2,11 @@ package backend;
 
 public class Tabellone {
 
+	/**
+	 * Questa classe rappresenta il tabellone, non fa altro che estrarre il numero e segnarlo in una matrice qui
+	 * all'interno che però non viene mai controllata
+	 */
+
 	private int[] numeri; // tutti i numeri da 1 a 90, in ordine casuale
 	private int current; // elemento estratto da numeri
 

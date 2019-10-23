@@ -37,6 +37,7 @@ public class Cartella {
 			return controllaRiga(vincitaCorrente, riga);
 	}
 
+	// Controlla se è uscita la tombola
 	private boolean controllaTombola(){
 		for (boolean[] riga : segnati)
 			for (boolean elemento : riga)
@@ -45,6 +46,7 @@ public class Cartella {
 		return true;
 	}
 
+	// Gli viene passata la riga su cui è uscito il numero e controlla se su quella riga c'è stata una vincita
 	private boolean controllaRiga(Vincita vincitaCorrente, int riga){
 		if (riga == rigaUltimaVincita && vincitaCorrente.ordinal() - ultimaVincita.ordinal() == 1)
 			return false;

@@ -14,14 +14,14 @@ public class MainBackend {
 		int n = Integer.parseInt(sc.nextLine());
 		LinkedList<Cartella> cartelle = gestoreCartelle.caricaCartelle(n);
 
-		Gestore gestore = new Gestore(cartelle);
+		Gestore gestore = new Gestore(cartelle, null);
 
-		while (!gestore.tombola()) {
+		do {
 			System.out.println("Premi invio per andare avanti");
 			sc.nextLine();
 
 			gestore.estraiNumero();
-		}
+		} while (!gestore.controllaVincite());
 	}
 	
 }
