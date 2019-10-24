@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.Scene?>
+<?import javafx.scene.text.Font?>
+<Scene xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+    <AnchorPane prefHeight="286.0" prefWidth="307.0">
+        <children>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="216.0" prefHeight="17.0" prefWidth="280.0"
+                   text="Creato da Andrea Scoppetta">
+                <font>
+                    <Font name="Arial" size="22.0"/>
+                </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="68.0" prefWidth="281.0"
+                   text="Tombola elettronica con immagini" textAlignment="CENTER" wrapText="true">
+                <font>
+                    <Font name="Arial" size="24.0"/>
+                </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="101.0" layoutY="110.0" prefHeight="20.0" prefWidth="105.0"
+                   text="Versione: 1.0">
+                <font>
+                    <Font name="Arial" size="16.0"/>
+                </font>
+            </Label>
+        </children>
+    </AnchorPane>
+</Scene>

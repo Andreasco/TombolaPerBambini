@@ -7,10 +7,13 @@ import backend.Vincita;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -26,15 +29,15 @@ public class TabelloneController {
 	 * È davvero un casino
 	 */
 
+	private Label[] labelsVincite = new Label[5];
+
+	private Label[] labelsNumeri = new Label[91]; //l'indice corrisponde al numero all'interno della label
+
 	@FXML
 	private GridPane tabellone;
 
 	@FXML
 	private GridPane grigliaVincite;
-
-	public Label[] labelsVincite = new Label[5];
-
-	public Label[] labelsNumeri = new Label[91]; //l'indice sarà il numero al suo interno
 
 	@FXML
 	private TextArea areaVinciteCartelle;
@@ -51,8 +54,6 @@ public class TabelloneController {
 	@FXML
 	private Button bottoneMostraImmagine;
 
-	private String nomeImmagineAttuale;
-
 	@FXML
 	private Button bottoneMostraNome;
 
@@ -65,9 +66,11 @@ public class TabelloneController {
 	@FXML
 	private MenuItem caricaImmagini;
 
-	private Gestore gestore;
+	@FXML
+	private MenuItem about;
 
-	private LinkedList<Cartella> cartelle;
+	@FXML
+	private MenuItem comeFunziona;
 
 	private TabelloneController tabelloneController;
 
@@ -75,20 +78,34 @@ public class TabelloneController {
 
 	private Stage primaryStage;
 
-	private int numeroImmaginiCaricate;
+	private Gestore gestore;
+
+	private LinkedList<Cartella> cartelle;
+
+	private int numeroImmaginiCaricate = 0;
+
+	private String nomeImmagineAttuale;
 
 	// Mi salvo gli indici (riga dove si trova il path) delle immagini usate così non carico due volte la stessa
 	private LinkedList<Integer> indiciRigaImmaginiUsate = new LinkedList<>();
 
 	public TabelloneController() {
+		// Mi serve perchè devo passarlo al Gestore
 		tabelloneController = this;
+
+		// Leggo quante immagini sono salvate, se ce ne sono
+		leggiQuantitaImmagini();
 	}
 
 	@FXML
 	private void initialize(){
 		bottoneEstraiNumero.setDisable(true);
-		bottoneMostraImmagine.setDisable(true);
-		bottoneMostraNome.setDisable(true);
+		if (numeroImmaginiCaricate == 0) {
+			bottoneMostraImmagine.setDisable(true);
+			bottoneMostraNome.setDisable(true);
+			Alert alert = new Alert(Alert.AlertType.INFORMATION, "Non ci sono immagini caricate");
+			alert.showAndWait();
+		}
 
 		//creo la lista delle label con i numeri
 		creaLabelsNumeri();
@@ -158,6 +175,24 @@ public class TabelloneController {
 
 	// Aggiungo i listener ad ongi pulsante o item dei menù
 	private void aggiungiListeners() {
+		aggiungiListenerBottoneEstraiNumero();
+
+		aggiungiListenerImpostaNumeroPartecipanti();
+
+		aggiungiListenerCaricaImmagini();
+
+		aggiungiListenerBottoneMostraImmagine();
+
+		aggiungiListenerBottoneMostraNome();
+
+		aggiungiListenerComeFunziona();
+
+		aggiungiListenerAbout();
+	}
+
+	/* LISTENERS */
+
+	private void aggiungiListenerBottoneEstraiNumero() {
 		bottoneEstraiNumero.setOnAction(new EventHandler<ActionEvent>(){
 			@Override
 			public void handle(ActionEvent actionEvent) {
@@ -176,7 +211,9 @@ public class TabelloneController {
 				}
 			}
 		});
+	}
 
+	private void aggiungiListenerImpostaNumeroPartecipanti() {
 		impostaNumeroPartecipanti.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
@@ -215,12 +252,15 @@ public class TabelloneController {
 						}
 
 						int numeroCartelle = Integer.parseInt(fieldNumeroPartecipanti.getText());
+						if (numeroCartelle > 60) {
+							Alert alert = new Alert(Alert.AlertType.INFORMATION, "Troppi giocatori, purtroppo questo " + "programma supporta fino a 60 giocatori");
+							alert.showAndWait();
+							return;
+						}
 						GestoreCartelle gestoreCartelle = new GestoreCartelle();
 						cartelle = gestoreCartelle.caricaCartelle(numeroCartelle);
 						gestore = new Gestore(cartelle, tabelloneController);
 						bottoneEstraiNumero.setDisable(false);
-						bottoneMostraImmagine.setDisable(false);
-						bottoneMostraNome.setDisable(false);
 						newWindow.close();
 					}
 				});
@@ -228,20 +268,20 @@ public class TabelloneController {
 				newWindow.show();
 			}
 		});
+	}
 
+	private void aggiungiListenerCaricaImmagini() {
 		caricaImmagini.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
 				FileChooser fileChooser = new FileChooser();
 				List<File> immagini = fileChooser.showOpenMultipleDialog(primaryStage);
 
-				// TODO: 24/10/2019 il numero delle immagini ovviamente non viene salvato tra una partita e l'altra,
-				// cambiare il metodo che salva i path in modo da salvare il numero delle immagini alla prima riga
-				// cosicchè all'avvio di una partita basti leggere la prima riga per sapere quante immagini ci sono.
-				// Se non ci sono immagini in memoria avviso l'utente
 				if (immagini != null && !immagini.isEmpty()) {
 					numeroImmaginiCaricate = immagini.size();
 					salvaPathImmagini(immagini);
+					bottoneMostraImmagine.setDisable(false);
+					bottoneMostraNome.setDisable(false);
 				}
 
 				else{
@@ -250,7 +290,9 @@ public class TabelloneController {
 				}
 			}
 		});
+	}
 
+	private void aggiungiListenerBottoneMostraImmagine() {
 		bottoneMostraImmagine.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
@@ -266,7 +308,9 @@ public class TabelloneController {
 				finestraImmagineController.mostraImmagine(file);
 			}
 		});
+	}
 
+	private void aggiungiListenerBottoneMostraNome() {
 		bottoneMostraNome.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent actionEvent) {
@@ -275,9 +319,72 @@ public class TabelloneController {
 		});
 	}
 
+	private void aggiungiListenerComeFunziona() {
+		comeFunziona.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent actionEvent) {
+				try {
+					Stage stageComeFunziona = new Stage();
+					stageComeFunziona.setTitle("Come funziona");
+
+					// Carica la GUI descritta nel file FXML
+					FXMLLoader loader = new FXMLLoader();
+					loader.setLocation(MainFrontend.class.getResource("ComeFunziona.fxml"));
+					Scene scenaComeFunziona = loader.load();
+
+					stageComeFunziona.setScene(scenaComeFunziona);
+					stageComeFunziona.show();
+				}
+				catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	private void aggiungiListenerAbout() {
+		about.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent actionEvent) {
+				try {
+					Stage stageAbout = new Stage();
+					stageAbout.setTitle("About");
+
+					// Carica la GUI descritta nel file FXML
+					FXMLLoader loader = new FXMLLoader();
+					loader.setLocation(MainFrontend.class.getResource("About.fxml"));
+					Scene scenaAbout = loader.load();
+
+					stageAbout.setScene(scenaAbout);
+					stageAbout.show();
+				}
+				catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/* UTILITA */
+
+	// Legge la prima riga del file con la lista delle immagini per vedere quante immagini ci sono salvate
+	private void leggiQuantitaImmagini() {
+		try {
+			FileInputStream fs = new FileInputStream("src/persistenza/ListaImmagini");
+			BufferedReader br = new BufferedReader(new InputStreamReader(fs));
+			numeroImmaginiCaricate = Integer.parseInt(br.readLine());
+		}
+		catch (Exception e) {
+			numeroImmaginiCaricate = 0;
+		}
+	}
+
 	private void salvaPathImmagini(List<File> files){
 		try {
 			FileWriter fw = new FileWriter("src/persistenza/ListaImmagini");
+
+			// Scrive al primo rigo quante immagini ci sono
+			fw.write(files.size() + "\n");
 
 			for (File immagine : files) {
 				fw.write(immagine.getAbsolutePath() + "\n");
@@ -306,7 +413,7 @@ public class TabelloneController {
 			System.out.println("Prima FIS");
 			FileInputStream fs= new FileInputStream("src/persistenza/ListaImmagini");
 			BufferedReader br = new BufferedReader(new InputStreamReader(fs));
-			for(int i = 0; i < indice; ++i)
+			for (int i = 0; i < indice + 1; ++i)
 				br.readLine();
 			String pathImmagine = br.readLine();
 			ret = new File(pathImmagine);
@@ -345,11 +452,11 @@ public class TabelloneController {
 
 	/* SETTERS */
 
-	public void setFinestraImmagineController(FinestraImmagineController finestraImmagineController) {
+	void setFinestraImmagineController(FinestraImmagineController finestraImmagineController) {
 		this.finestraImmagineController = finestraImmagineController;
 	}
 
-	public void setPrimaryStage(Stage primaryStage) {
+	void setPrimaryStage(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 	}
 }
