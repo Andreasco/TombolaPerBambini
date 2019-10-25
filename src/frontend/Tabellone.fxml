@@ -1087,12 +1087,13 @@
                      <items>
                        <MenuItem fx:id="impostaNumeroPartecipanti" mnemonicParsing="false" text="Imposta numero partecipanti" />
                            <MenuItem fx:id="caricaImmagini" mnemonicParsing="false" text="Carica immagini" />
+                         <MenuItem fx:id="apriFinestraImmagine" mnemonicParsing="false" text="Apri finestra immagine"/>
                      </items>
                    </Menu>
                    <Menu mnemonicParsing="false" text="Help">
                      <items>
-                        <MenuItem fx:id="about" mnemonicParsing="false" text="About"/>
-                        <MenuItem fx:id="comeFunziona" mnemonicParsing="false" text="Come funziona"/>
+                         <MenuItem fx:id="about" mnemonicParsing="false" text="About"/>
+                         <MenuItem fx:id="comeFunziona" mnemonicParsing="false" text="Come funziona"/>
                      </items>
                    </Menu>
                  </menus>

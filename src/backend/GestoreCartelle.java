@@ -1,7 +1,9 @@
 package backend;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
 
@@ -19,7 +21,8 @@ public class GestoreCartelle {
 	//carico in memoria le cartelle salvate sul file
 	public GestoreCartelle(){
 		try {
-			BufferedReader br = new BufferedReader(new FileReader("src/persistenza/Cartelle"));
+			InputStream input = GestoreCartelle.class.getResourceAsStream("/persistenza/Cartelle");
+			BufferedReader br = new BufferedReader(new InputStreamReader(input, StandardCharsets.UTF_8));
 			for (int i = 0; i < 60; i++){
 				String linea = br.readLine();
 				StringTokenizer st = new StringTokenizer(linea, " ");

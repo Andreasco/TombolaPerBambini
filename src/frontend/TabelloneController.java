@@ -19,6 +19,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.*;
+import java.net.URISyntaxException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
@@ -67,12 +68,17 @@ public class TabelloneController {
 	private MenuItem caricaImmagini;
 
 	@FXML
+	private MenuItem apriFinestraImmagine;
+
+	@FXML
 	private MenuItem about;
 
 	@FXML
 	private MenuItem comeFunziona;
 
 	private TabelloneController tabelloneController;
+
+	private MainFrontend mainFrontend;
 
 	private FinestraImmagineController finestraImmagineController;
 
@@ -86,10 +92,26 @@ public class TabelloneController {
 
 	private String nomeImmagineAttuale;
 
+	// Path della directory in cui si trova il JAR
+	private String pathToDirectory;
+
 	// Mi salvo gli indici (riga dove si trova il path) delle immagini usate così non carico due volte la stessa
 	private LinkedList<Integer> indiciRigaImmaginiUsate = new LinkedList<>();
 
 	public TabelloneController() {
+		try {
+			String pathToJar = new File(TabelloneController.class.getProtectionDomain().getCodeSource().getLocation().toURI()).getPath();
+			String[] pathSeparato = pathToJar.split("/");
+
+			// Path fino alla directory in cui si trova la tombola
+			pathToDirectory = "";
+			for (int i = 0; i < pathSeparato.length - 1; i++)
+				pathToDirectory += "/" + pathSeparato[i];
+		}
+		catch (URISyntaxException e) {
+			e.printStackTrace();
+		}
+
 		// Mi serve perchè devo passarlo al Gestore
 		tabelloneController = this;
 
@@ -188,6 +210,8 @@ public class TabelloneController {
 		aggiungiListenerComeFunziona();
 
 		aggiungiListenerAbout();
+
+		aggiungiListenerApriFinestraImmagine();
 	}
 
 	/* LISTENERS */
@@ -365,23 +389,32 @@ public class TabelloneController {
 		});
 	}
 
+	private void aggiungiListenerApriFinestraImmagine() {
+		apriFinestraImmagine.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent actionEvent) {
+				mainFrontend.apriFinestraImmagine();
+			}
+		});
+	}
+
 	/* UTILITA */
 
 	// Legge la prima riga del file con la lista delle immagini per vedere quante immagini ci sono salvate
 	private void leggiQuantitaImmagini() {
 		try {
-			FileInputStream fs = new FileInputStream("src/persistenza/ListaImmagini");
-			BufferedReader br = new BufferedReader(new InputStreamReader(fs));
+			BufferedReader br = new BufferedReader(new FileReader(pathToDirectory + "/ListaImmagini"));
 			numeroImmaginiCaricate = Integer.parseInt(br.readLine());
 		}
 		catch (Exception e) {
+			e.printStackTrace();
 			numeroImmaginiCaricate = 0;
 		}
 	}
 
 	private void salvaPathImmagini(List<File> files){
 		try {
-			FileWriter fw = new FileWriter("src/persistenza/ListaImmagini");
+			FileWriter fw = new FileWriter(pathToDirectory + "/ListaImmagini");
 
 			// Scrive al primo rigo quante immagini ci sono
 			fw.write(files.size() + "\n");
@@ -392,7 +425,7 @@ public class TabelloneController {
 
 			fw.close();
 		}
-		catch (IOException e) {
+		catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -411,8 +444,7 @@ public class TabelloneController {
 
 		try {
 			System.out.println("Prima FIS");
-			FileInputStream fs= new FileInputStream("src/persistenza/ListaImmagini");
-			BufferedReader br = new BufferedReader(new InputStreamReader(fs));
+			BufferedReader br = new BufferedReader(new FileReader(pathToDirectory + "/ListaImmagini"));
 			for (int i = 0; i < indice + 1; ++i)
 				br.readLine();
 			String pathImmagine = br.readLine();
@@ -458,5 +490,9 @@ public class TabelloneController {
 
 	void setPrimaryStage(Stage primaryStage) {
 		this.primaryStage = primaryStage;
+	}
+
+	void setMainFrontend(MainFrontend mainFrontend) {
+		this.mainFrontend = mainFrontend;
 	}
 }

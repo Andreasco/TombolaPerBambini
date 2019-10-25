@@ -8,12 +8,15 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
+import java.io.IOException;
+
 public class MainFrontend extends Application {
 
 	private Stage primaryStage;
 	private Scene tabellone;
 	private Stage stageImmagine;
 	private Scene scenaImmagine;
+	private TabelloneController tabelloneController;
 
 	public static void main(String[] args) {
 		launch(args);
@@ -30,7 +33,8 @@ public class MainFrontend extends Application {
 			loader.setLocation(MainFrontend.class.getResource("Tabellone.fxml"));
 			tabellone = loader.load();
 			// Carica il controller specificato alla riga 18 del file FXML, ovvero la class TabelloneController
-			TabelloneController tabelloneController = loader.getController();
+			tabelloneController = loader.getController();
+			tabelloneController.setMainFrontend(this);
 
 			//chiude tutta l'applicazione quando viene chiusa la finestra principale
 			primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
@@ -43,12 +47,20 @@ public class MainFrontend extends Application {
 			primaryStage.setScene(tabellone);
 			primaryStage.show();
 
-			// Crea la finestra dove vengono mostrate l'immagine e il numero
+			apriFinestraImmagine();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	void apriFinestraImmagine() {
+		try {
 			stageImmagine = new Stage();
 			stageImmagine.setTitle("Immagine e numero");
 
 			// Carica la GUI descritta nel file FXML
-			loader = new FXMLLoader();
+			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainFrontend.class.getResource("FinestraImmagine.fxml"));
 			scenaImmagine = loader.load();
 
@@ -58,7 +70,7 @@ public class MainFrontend extends Application {
 			stageImmagine.setScene(scenaImmagine);
 			stageImmagine.show();
 		}
-		catch (Exception e) {
+		catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
