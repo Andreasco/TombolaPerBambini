@@ -4,11 +4,14 @@ import java.util.Random;
 
 public class Utility {
 
+	/**
+	 * Classe di utilità ereditata dal progetto trovato su GitHub, mi serve per alcune funzioni che non ho cambiato
+	 */
+
 	// Se INFO_OUTPUT è false, tutte le classi diventeranno "silenziose": tutto l'output
 	// delle classi passa attraverso il metodo Utility.info, quindi basta porre INFO_OUTPUT
 	// a false per eliminare tutto l'output
-	public static boolean INFO_OUTPUT = true;
-
+	private static boolean INFO_OUTPUT = true;
 
 	public static int generaCasuale(final int min, final int max) {
 		return min + (int)(Math.random() * (max-min));

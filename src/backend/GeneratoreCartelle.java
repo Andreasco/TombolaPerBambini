@@ -7,11 +7,21 @@ import java.util.Arrays;
 
 public class GeneratoreCartelle {
 	public static void main(String[] args) {
-		for (int x = 0; x < 60; x++) {
-			int[] numeri;
-			boolean[] segnati = new boolean[15];
+		final int QUANTITA_CARTELLE = 60;
+		final int NUMERI_PER_CARTELLA = 15;
+		/*
+		 * Questa classe serve solo per creare 60 cartelle casuali rispettando le regole della tombola.
+		 * L'ho usata una sola volta e non dovrei aver bisogno di usarla di nuovo.
+		 * Buona parte di questo codice è presa dal progetto trovato su GitHub quindi preferisco non metterci mano,
+		 * basta che funzioni.
+		 */
 
-			numeri = new int[15];
+
+		for (int x = 0; x < QUANTITA_CARTELLE; x++) {
+			int[] numeri;
+			boolean[] segnati = new boolean[NUMERI_PER_CARTELLA];
+
+			numeri = new int[NUMERI_PER_CARTELLA];
 			// Riempio il vettore con 15 numeri casuali che rispettino le regole:
 			// 1. no numeri ripetuti
 			// 2. max 2 numeri con la stessa decina
@@ -72,8 +82,7 @@ public class GeneratoreCartelle {
 			BufferedWriter writer = null;
 			try {
 				//create a temporary file
-				//String timeLog = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
-				File logFile = new File("Cartelle");
+				File logFile = new File("src/persistenza/Cartelle");
 
 				// This will output the full path where the file will be written to...
 				System.out.println(logFile.getCanonicalPath());

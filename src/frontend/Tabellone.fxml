@@ -1,20 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.Scene?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.TitledPane?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-
+<?import javafx.scene.text.*?>
 <Scene xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontend.TabelloneController">
     <AnchorPane prefHeight="700.0" prefWidth="700.0">
       <children>
@@ -33,7 +22,7 @@
                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                        </rowConstraints>
                         <children>
-                           <GridPane fx:id="gridPane" gridLinesVisible="true" layoutX="10.0" layoutY="10.0">
+                           <GridPane gridLinesVisible="true" layoutX="10.0" layoutY="10.0">
                               <columnConstraints>
                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -1020,11 +1009,7 @@
                              <content>
                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="120.0" prefWidth="200.0">
                                     <children>
-                                       <Label fx:id="labelVinciteCartelle" layoutX="82.0" layoutY="56.0" prefHeight="111.0" prefWidth="220.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                          <font>
-                                             <Font name="Arial" size="16.0" />
-                                          </font>
-                                       </Label>
+                                       <TextArea fx:id="areaVinciteCartelle" editable="false" prefHeight="111.0" prefWidth="220.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                     </children>
                                  </AnchorPane>
                              </content>
@@ -1032,14 +1017,11 @@
                                  <Font name="Arial" size="14.0" />
                               </font>
                            </TitledPane>
-                           <TitledPane animated="false" collapsible="false" text="Notifiche">
+                           <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" text="Notifiche" VBox.vgrow="ALWAYS">
                              <content>
-                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="120.0" prefWidth="200.0">
+                               <AnchorPane maxHeight="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="120.0" prefWidth="200.0">
                                     <children>
-                                       <Label fx:id="labelNotifiche" layoutX="35.0" layoutY="39.0" prefHeight="111.0" prefWidth="220.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                          <font>
-                                             <Font name="Arial" size="13.0" />
-                                          </font></Label>
+                                       <TextArea fx:id="areaNotifiche" editable="false" maxHeight="1.7976931348623157E308" prefHeight="100000.0" prefWidth="220.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                     </children>
                                  </AnchorPane>
                              </content>
@@ -1073,19 +1055,21 @@
                                  </AnchorPane>
                                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                                     <children>
-                                       <Button fx:id="bottoneEstraiNumero" mnemonicParsing="false" prefHeight="30.0" prefWidth="111.0" text="Estrai numero" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0" />
+                                       <Button fx:id="bottoneMostraNome" mnemonicParsing="false" prefHeight="30.0" prefWidth="111.0" text="Mostra nome" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0" />
                                     </children>
                                  </AnchorPane>
                               </children>
                            </GridPane>
+                           <AnchorPane prefHeight="49.0" prefWidth="222.0">
+                              <children>
+                                 <Button fx:id="bottoneEstraiNumero" mnemonicParsing="false" prefHeight="34.5" prefWidth="222.0" text="Estrai numero" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              </children>
+                           </AnchorPane>
                            <TitledPane animated="false" collapsible="false" prefWidth="222.0" text="Numeri usciti" wrapText="true">
                              <content>
                                <AnchorPane prefHeight="110.0">
                                     <children>
-                                       <Label fx:id="labelNumeriUsciti" layoutX="76.0" layoutY="34.0" prefHeight="101.5" prefWidth="220.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                          <font>
-                                             <Font name="Arial" size="13.0" />
-                                          </font></Label>
+                                       <TextArea fx:id="areaNumeriUsciti" editable="false" prefHeight="221.0" prefWidth="221.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                     </children>
                                  </AnchorPane>
                              </content>
@@ -1101,17 +1085,15 @@
                  <menus>
                    <Menu mnemonicParsing="false" text="File">
                      <items>
-                       <MenuItem mnemonicParsing="false" text="Close" />
-                     </items>
-                   </Menu>
-                   <Menu mnemonicParsing="false" text="Edit">
-                     <items>
-                       <MenuItem mnemonicParsing="false" text="Delete" />
+                       <MenuItem fx:id="impostaNumeroPartecipanti" mnemonicParsing="false" text="Imposta numero partecipanti" />
+                           <MenuItem fx:id="caricaImmagini" mnemonicParsing="false" text="Carica immagini" />
+                         <MenuItem fx:id="apriFinestraImmagine" mnemonicParsing="false" text="Apri finestra immagine"/>
                      </items>
                    </Menu>
                    <Menu mnemonicParsing="false" text="Help">
                      <items>
-                       <MenuItem mnemonicParsing="false" text="About" />
+                         <MenuItem fx:id="about" mnemonicParsing="false" text="About"/>
+                         <MenuItem fx:id="comeFunziona" mnemonicParsing="false" text="Come funziona"/>
                      </items>
                    </Menu>
                  </menus>

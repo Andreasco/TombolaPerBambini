@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.Scene?>
+<?import javafx.scene.text.*?>
+<Scene xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+    <AnchorPane prefHeight="342.0" prefWidth="467.0">
+        <children>
+            <Label alignment="CENTER" layoutX="36.0" layoutY="14.0" prefHeight="43.0" prefWidth="393.0"
+                   text="Benvenuto nella tombola elettronica!">
+                <font>
+                    <Font name="Arial Bold" size="22.0"/>
+                </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="65.0" prefHeight="81.0" prefWidth="441.0"
+                   text="La partita inizierà una volta inserito il numero dei partecipanti, puoi anche inserire  delle immagini da mostrare durante il gioco. Le immagini rimaranno salvate per le partite  successive finchè non verranno cambiate"
+                   wrapText="true">
+                <font>
+                    <Font name="Arial" size="15.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="146.0" prefHeight="67.0" prefWidth="443.0"
+                   text="Per iniziare una partita, cliccare su File e Imposta numero partecipanti, una volta inserito il numero di giocatori la partita potrà iniziare."
+                   wrapText="true">
+                <font>
+                    <Font name="Arial" size="15.0"/>
+                </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="211.0" prefHeight="70.0" prefWidth="445.0"
+                   text="Per caricare le immagini, cliccare su File e Carica immagini. Verrà aperta una schermata in cui selezionare le immagini che verranno salvate finchè non si deciderà di cambiarle"
+                   wrapText="true">
+                <font>
+                    <Font name="Arial" size="15.0"/>
+                </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="11.0" layoutY="297.0" prefHeight="17.0" prefWidth="423.0"
+                   text="Buona partita!">
+                <font>
+                    <Font name="Arial" size="22.0"/>
+                </font>
+            </Label>
+        </children>
+    </AnchorPane>
+</Scene>
