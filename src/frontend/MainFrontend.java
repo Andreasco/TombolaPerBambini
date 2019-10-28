@@ -17,6 +17,7 @@ public class MainFrontend extends Application {
 	private Stage stageImmagine;
 	private Scene scenaImmagine;
 	private TabelloneController tabelloneController;
+	private boolean primaVolta = true;
 
 	public static void main(String[] args) {
 		launch(args);
@@ -63,15 +64,22 @@ public class MainFrontend extends Application {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainFrontend.class.getResource("FinestraImmagine.fxml"));
 			scenaImmagine = loader.load();
+			FinestraImmagineController finestraImmagineController = loader.getController();
 
 			tabelloneController.setFinestraImmagineController(loader.getController());
 			tabelloneController.setPrimaryStage(primaryStage);
 
 			stageImmagine.setScene(scenaImmagine);
+			if (primaVolta)
+				finestraImmagineController.mostraImmagineIniziale();
 			stageImmagine.show();
 		}
 		catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public void setPrimaVolta(boolean primaVolta) {
+		this.primaVolta = primaVolta;
 	}
 }

@@ -98,6 +98,16 @@ public class TabelloneController {
 
 	private String nomeImmagineAttuale;
 
+	private File immagineCorrente;
+
+	private int numeroCorrente;
+
+	private boolean premutoMostraImmagine = false;
+
+	private boolean premutoMostraNome = false;
+
+	private boolean premutoEstraiNumero = false;
+
 	// Path della directory in cui si trova il JAR
 	private String pathToDirectory;
 
@@ -234,7 +244,9 @@ public class TabelloneController {
 			public void handle(ActionEvent actionEvent) {
 				int n = gestore.estraiNumero();
 				labelsNumeri[n].setStyle("-fx-background-color: #1dff31");
+				numeroCorrente = n;
 				finestraImmagineController.setNumero(n);
+				premutoEstraiNumero = true;
 
 				// Se esce la tombola
 				if (gestore.controllaVincite()) {
@@ -302,6 +314,7 @@ public class TabelloneController {
 					}
 				});
 
+				mainFrontend.setPrimaVolta(false);
 				newWindow.show();
 			}
 		});
@@ -337,12 +350,18 @@ public class TabelloneController {
 				//per evitare che il programma vada in blocco continuando a cercare un indice che non è stato usato
 				if (indiciRigaImmaginiUsate.size() == numeroImmaginiCaricate)
 					return;
+
+				premutoMostraNome = false;
+				premutoEstraiNumero = false;
+
 				System.out.println("Prima scegli file casuale");
 				File file = scegliImmagineCasuale();
 				nomeImmagineAttuale = file.getName().split("\\.")[0];
+				immagineCorrente = file;
 				finestraImmagineController.mostraNomeImmagine("");
 				finestraImmagineController.clearNumero();
 				finestraImmagineController.mostraImmagine(file);
+				premutoMostraImmagine = true;
 			}
 		});
 	}
@@ -352,6 +371,7 @@ public class TabelloneController {
 			@Override
 			public void handle(ActionEvent actionEvent) {
 				finestraImmagineController.mostraNomeImmagine(nomeImmagineAttuale);
+				premutoMostraNome = true;
 			}
 		});
 	}
@@ -407,6 +427,12 @@ public class TabelloneController {
 			@Override
 			public void handle(ActionEvent actionEvent) {
 				mainFrontend.apriFinestraImmagine();
+				if (premutoMostraImmagine)
+					finestraImmagineController.mostraImmagine(immagineCorrente);
+				if (premutoMostraNome)
+					finestraImmagineController.mostraNomeImmagine(nomeImmagineAttuale);
+				if (premutoEstraiNumero)
+					finestraImmagineController.setNumero(numeroCorrente);
 			}
 		});
 	}
@@ -434,10 +460,7 @@ public class TabelloneController {
 		mostraImmagineIniziale.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				File immagineIniziale = leggiImmagineIniziale();
-				if (immagineIniziale != null) {
-					finestraImmagineController.mostraImmagineIniziale(immagineIniziale);
-				}
+				finestraImmagineController.mostraImmagineIniziale();
 			}
 		});
 	}

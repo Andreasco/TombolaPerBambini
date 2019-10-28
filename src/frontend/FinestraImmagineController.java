@@ -59,11 +59,6 @@ public class FinestraImmagineController {
 		immagine.fitWidthProperty().bind(paneSinistraSplitPane.widthProperty());
 		immagineIniziale.fitHeightProperty().bind(panePrincipale.heightProperty());
 		immagineIniziale.fitWidthProperty().bind(panePrincipale.widthProperty());
-
-		File immagineIniziale = leggiImmagineIniziale();
-		if (immagineIniziale != null) {
-			mostraImmagineIniziale(immagineIniziale);
-		}
 	}
 
 	public void mostraImmagine(File file){
@@ -75,13 +70,16 @@ public class FinestraImmagineController {
 		immagine.setImage(image);
 	}
 
-	public void mostraImmagineIniziale(File file) {
-		// Questi due valori servono per non far sgranare l'immagine, non so perchè però
-		double altezza = panePrincipale.getMaxHeight();
-		double larghezza = panePrincipale.getMaxWidth();
-		System.out.println("Prima new image (immagine iniziale)");
-		Image image = new Image(file.toURI().toString(), altezza, larghezza, false, false);
-		immagineIniziale.setImage(image);
+	public void mostraImmagineIniziale() {
+		File immagineIniziale = leggiImmagineIniziale();
+		if (immagineIniziale != null) {
+			// Questi due valori servono per non far sgranare l'immagine, non so perchè però
+			double altezza = panePrincipale.getMaxHeight();
+			double larghezza = panePrincipale.getMaxWidth();
+			System.out.println("Prima new image (immagine iniziale)");
+			Image image = new Image(immagineIniziale.toURI().toString(), altezza, larghezza, false, false);
+			this.immagineIniziale.setImage(image);
+		}
 	}
 
 	public void mostraNomeImmagine(String nome){
