@@ -71,6 +71,12 @@ public class TabelloneController {
 	private MenuItem apriFinestraImmagine;
 
 	@FXML
+	private MenuItem caricaImmagineIniziale;
+
+	@FXML
+	private MenuItem mostraImmagineIniziale;
+
+	@FXML
 	private MenuItem about;
 
 	@FXML
@@ -197,21 +203,27 @@ public class TabelloneController {
 
 	// Aggiungo i listener ad ongi pulsante o item dei menù
 	private void aggiungiListeners() {
-		aggiungiListenerBottoneEstraiNumero();
 
 		aggiungiListenerImpostaNumeroPartecipanti();
 
 		aggiungiListenerCaricaImmagini();
 
-		aggiungiListenerBottoneMostraImmagine();
+		aggiungiListenerApriFinestraImmagine();
 
-		aggiungiListenerBottoneMostraNome();
+		aggiungiListenerCaricaImmagineIniziale();
+
+		aggiungiListenerMostraImmagineIniziale();
 
 		aggiungiListenerComeFunziona();
 
 		aggiungiListenerAbout();
 
-		aggiungiListenerApriFinestraImmagine();
+		aggiungiListenerBottoneMostraImmagine();
+
+		aggiungiListenerBottoneMostraNome();
+
+		aggiungiListenerBottoneEstraiNumero();
+
 	}
 
 	/* LISTENERS */
@@ -285,6 +297,7 @@ public class TabelloneController {
 						cartelle = gestoreCartelle.caricaCartelle(numeroCartelle);
 						gestore = new Gestore(cartelle, tabelloneController);
 						bottoneEstraiNumero.setDisable(false);
+						finestraImmagineController.nascondiImmagineIniziale();
 						newWindow.close();
 					}
 				});
@@ -326,7 +339,7 @@ public class TabelloneController {
 					return;
 				System.out.println("Prima scegli file casuale");
 				File file = scegliImmagineCasuale();
-				nomeImmagineAttuale = file.getName();
+				nomeImmagineAttuale = file.getName().split("\\.")[0];
 				finestraImmagineController.mostraNomeImmagine("");
 				finestraImmagineController.clearNumero();
 				finestraImmagineController.mostraImmagine(file);
@@ -398,6 +411,37 @@ public class TabelloneController {
 		});
 	}
 
+	private void aggiungiListenerCaricaImmagineIniziale() {
+		caricaImmagineIniziale.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				FileChooser fileChooser = new FileChooser();
+				File immagine = fileChooser.showOpenDialog(primaryStage);
+
+				if (immagine != null) {
+					salvaPathImmagineIniziale(immagine);
+				}
+
+				else {
+					Alert alert = new Alert(Alert.AlertType.INFORMATION, "Non hai selezionato nessuna immagine");
+					alert.showAndWait();
+				}
+			}
+		});
+	}
+
+	private void aggiungiListenerMostraImmagineIniziale() {
+		mostraImmagineIniziale.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				File immagineIniziale = leggiImmagineIniziale();
+				if (immagineIniziale != null) {
+					finestraImmagineController.mostraImmagineIniziale(immagineIniziale);
+				}
+			}
+		});
+	}
+
 	/* UTILITA */
 
 	// Legge la prima riga del file con la lista delle immagini per vedere quante immagini ci sono salvate
@@ -405,11 +449,29 @@ public class TabelloneController {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(pathToDirectory + "/ListaImmagini"));
 			numeroImmaginiCaricate = Integer.parseInt(br.readLine());
+			br.close();
 		}
 		catch (Exception e) {
-			e.printStackTrace();
 			numeroImmaginiCaricate = 0;
 		}
+	}
+
+	private File leggiImmagineIniziale() {
+		File ret = null;
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(pathToDirectory + "/ImmagineIniziale"));
+			String pathImmagine = br.readLine();
+			System.out.println(pathImmagine);
+			ret = new File(pathImmagine);
+
+			br.close();
+		}
+		catch (Exception e) {
+			Alert alert = new Alert(Alert.AlertType.INFORMATION, "Non hai selezionato nessuna immagine iniziale");
+			alert.showAndWait();
+		}
+
+		return ret;
 	}
 
 	private void salvaPathImmagini(List<File> files){
@@ -422,6 +484,20 @@ public class TabelloneController {
 			for (File immagine : files) {
 				fw.write(immagine.getAbsolutePath() + "\n");
 			}
+
+			fw.close();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	private void salvaPathImmagineIniziale(File immagineIniziale) {
+		try {
+			FileWriter fw = new FileWriter(pathToDirectory + "/ImmagineIniziale");
+
+			// Scrive al primo rigo il path dell'immagine iniziale
+			fw.write(immagineIniziale.getAbsolutePath() + "\n");
 
 			fw.close();
 		}
@@ -450,6 +526,7 @@ public class TabelloneController {
 			String pathImmagine = br.readLine();
 			ret = new File(pathImmagine);
 			System.out.println("Dopo FIS");
+			br.close();
 		}
 		catch (IOException e) {
 			e.printStackTrace();

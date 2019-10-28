@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Scene?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Scene?>
 <?import javafx.scene.text.Font?>
-
 <Scene xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontend.FinestraImmagineController">
-    <AnchorPane prefHeight="497.0" prefWidth="637.0">
+    <AnchorPane fx:id="panePrincipale" prefHeight="497.0" prefWidth="637.0">
       <children>
          <SplitPane dividerPositions="0.721259842519685" prefHeight="497.0" prefWidth="637.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <items>
-               <AnchorPane fx:id="pane">
+                <AnchorPane fx:id="paneSinistraSplitPane">
                   <children>
                      <ImageView fx:id="immagine" fitHeight="498.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                      <Label fx:id="nomeImmagine" alignment="CENTER" layoutX="1.0" layoutY="382.0" prefHeight="56.0" prefWidth="455.0">
@@ -33,5 +32,7 @@
                </AnchorPane>
             </items>
          </SplitPane>
+          <ImageView fx:id="immagineIniziale" fitHeight="499.0" fitWidth="636.0" pickOnBounds="true"
+                     preserveRatio="true"/>
       </children></AnchorPane>
 </Scene>

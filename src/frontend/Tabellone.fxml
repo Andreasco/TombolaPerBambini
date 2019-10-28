@@ -1088,6 +1088,10 @@
                        <MenuItem fx:id="impostaNumeroPartecipanti" mnemonicParsing="false" text="Imposta numero partecipanti" />
                            <MenuItem fx:id="caricaImmagini" mnemonicParsing="false" text="Carica immagini" />
                          <MenuItem fx:id="apriFinestraImmagine" mnemonicParsing="false" text="Apri finestra immagine"/>
+                         <MenuItem fx:id="caricaImmagineIniziale" mnemonicParsing="false"
+                                   text="Carica immagine iniziale"/>
+                         <MenuItem fx:id="mostraImmagineIniziale" mnemonicParsing="false"
+                                   text="Mostra immagine iniziale"/>
                      </items>
                    </Menu>
                    <Menu mnemonicParsing="false" text="Help">
