@@ -51,17 +51,22 @@ public class Cartella {
 		if (riga == rigaUltimaVincita && vincitaCorrente.ordinal() - ultimaVincita.ordinal() == 1)
 			return false;
 		int count = 0;
-		for (boolean elemento : segnati[riga])
-			if (elemento)
+		int i = 0;
+		for (boolean elemento : segnati[riga]) {
+			if (elemento) {
 				count++;
-		Vincita v;
+				System.out.println("Cartella: " + id + " riga: " + riga + " numero: " + numeri[riga][i]);
+			}
+			i++;
+		}
+		Vincita v = null;
 		if (count == 2)
 			v = Vincita.Ambo;
 		else if (count == 3)
 			v = Vincita.Terna;
 		else if (count == 4)
 			v = Vincita.Quaterna;
-		else
+		else if (count == 5)
 			v = Vincita.Cinquina;
 
 		if (v == vincitaCorrente) {
